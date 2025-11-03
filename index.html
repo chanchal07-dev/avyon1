@@ -46,9 +46,9 @@
             justify-content: center;
             align-items: center;
             margin: 0;
-            font-family: 'Poppins', sans-serif; /* Changed to Poppins for consistency */
+            font-family: 'Poppins', sans-serif;
             overflow-x: hidden; 
-            overflow-y: hidden; /* Prevent body scroll during transition */
+            overflow-y: hidden;
             position: relative;
         }
         
@@ -70,7 +70,6 @@
         #page-1-content { 
             position: relative;
             z-index: 20; 
-            /* Ensure it is responsive in its container */
             width: 100%; 
             display: flex;
             justify-content: center;
@@ -85,7 +84,6 @@
         
         /* Use a responsive fluid scale with clamp() for big text */
         #text-container-p1 {
-            /* Mobile-first: 3rem minimum, 10vw for scaling, 8rem maximum */
             font-size: clamp(3rem, 15vw, 8rem); 
             font-weight: bold;
             letter-spacing: 0.1em;
@@ -123,14 +121,13 @@
             flex-direction: column; 
             align-items: center; 
             text-align: center; 
-            padding: 1rem; /* Add padding for mobile screens */
+            padding: 1rem;
         }
         
-        .tagline { color: var(--neon-green); text-shadow: 0 0 5px var(--neon-green); font-weight: bold; font-size: 1.25rem; } /* Mobile default */
+        .tagline { color: var(--neon-green); text-shadow: 0 0 5px var(--neon-green); font-weight: bold; font-size: 1.25rem; }
         
         /* Neon AVYON 2K25 Text (NEON BLUE) - Responsive Scaling */
         .neon-heading {
-            /* Mobile-first: 3rem minimum, 15vw for scaling, 8rem maximum */
             font-size: clamp(3rem, 15vw, 8rem);
             font-weight: 900;
             text-transform: uppercase;
@@ -146,7 +143,6 @@
         #go-button {
             padding: 0.8rem 2rem; 
             margin-top: 2rem; 
-            /* Mobile-first font size with clamp() */
             font-size: clamp(1rem, 4vw, 1.25rem); 
             font-weight: bold; 
             color: white;
@@ -164,7 +160,7 @@
         /* Floating Emojis P2 - Responsive Size */
         .floating-emoji-p2 {
             position: absolute; 
-            font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive size */
+            font-size: clamp(1.5rem, 5vw, 3rem);
             pointer-events: none; 
             z-index: 4;
         }
@@ -182,28 +178,29 @@
         /* --- PAGE 3: FORM STYLES (RESPONSIVE) --- */
         /* ======================================================= */
 
-       .form-page-body {
-    /* Styles applied to the BODY on transition completion */
-    background: url('/static/3.png'); /* Add your image path */
-    background-size: cover; /* Gradient animation size, image cover */
-    background-blend-mode: overlay; /* This blends gradient with image */
-    background-position: center center;
-    animation: gradient-animation-form 25s ease infinite;
-    font-family: "Poppins", sans-serif;
-    color: #ffffffaa;
-    min-height: 100vh;
-    width: 100%;
-    display: grid; 
-    place-items: center; 
-    padding: 1rem; 
-    overflow-y: auto;
-    overflow-x: hidden;
-    position: relative;
-}
-
+        .form-page-body {
+            background: linear-gradient(-45deg, var(--dark-blue-1), var(--dark-purple-2), var(--dark-red-3), var(--dark-cyan-4), var(--dark-magenta-5)), 
+                        url('/static/background.png');
+            background-size: cover;
+            background-blend-mode: overlay;
+            background-position: center center;
+            animation: gradient-animation-form 25s ease infinite;
+            font-family: "Poppins", sans-serif;
+            color: #ffffffaa;
+            min-height: 100vh;
+            width: 100%;
+            display: grid; 
+            place-items: center; 
+            padding: 1rem; 
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+        }
 
         @keyframes gradient-animation-form {
-            0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; }
+            0% { background-position: 0% 50%, center; } 
+            50% { background-position: 100% 50%, center; } 
+            100% { background-position: 0% 50%, center; }
         }
         
         #page-3-content-wrapper {
@@ -211,16 +208,15 @@
             height: 100%;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align to the top when content is large */
-            padding-top: 2rem; /* Add some top padding on larger screens */
-            padding-bottom: 2rem; /* Add some bottom padding on larger screens */
+            align-items: flex-start;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
         
         /* Form Container Adjustments for Responsiveness */
         #form-container {
-            /* Remove the fixed 700px width and use max-width for fluidity */
-            width: 100%; /* Take full width of the wrapper on small screens */
-            max-width: 700px; /* Max-width constraint for larger screens */
+            width: 100%;
+            max-width: 700px;
         }
 
         .neon-glow {
@@ -239,16 +235,19 @@
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            background: rgba(255, 255, 255, 0.08); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
         /* Floating Emojis Form - Responsive Size/Opacity */
         .floating-emoji-form {
             position: absolute; 
-            font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive size */
+            font-size: clamp(1.5rem, 4vw, 2rem);
             opacity: 1; 
             pointer-events: none;
-            display: none; /* Hide on mobile by default to de-clutter */
+            display: none;
         }
 
         /* Form Validation Styles */
@@ -388,7 +387,6 @@
         </div>
     </div>
 
-
     <div id="page-3-content" class="hidden-content w-full relative p-4" style="position: absolute; top: 100vh; left: 0;">
         <div id="page-3-content-wrapper" class="h-full w-full">
             <div class="floating-emoji-form top-10 left-1/4">🎈</div>
@@ -421,17 +419,17 @@
                         </h2>
                         <div>
                             <label for="name" class="block mb-2 text-sm font-medium">1. Name</label>
-                            <input type="text" id="name" placeholder="Enter your rockstar name 🎸" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300" required/>
+                            <input type="text" id="name" name="name" placeholder="Enter your rockstar name 🎸" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300" required/>
                             <span class="error-message" id="name-error"></span>
                         </div>
                         <div>
                             <label for="rollno" class="block mb-2 text-sm font-medium">2. Roll No / Student ID</label>
-                            <input type="text" id="rollno" placeholder="Your College ID" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300" required/>
+                            <input type="text" id="rollno" name="rollno" placeholder="Your College ID" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300" required/>
                             <span class="error-message" id="rollno-error"></span>
                         </div>
                         <div>
                             <label for="hobby" class="block mb-2 text-sm font-medium">3. Hobby 🕹️</label>
-                            <input type="text" id="hobby" placeholder="E.g., Binge-watching, Gaming, Power Napping" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300"/>
+                            <input type="text" id="hobby" name="hobby" placeholder="E.g., Binge-watching, Gaming, Power Napping" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300"/>
                             <span class="error-message" id="hobby-error"></span>
                         </div>
                         <button type="button" onclick="nextStep(2)" class="mt-8 w-full py-3 rounded-lg font-bold bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-90 transition duration-300 shadow-lg shadow-pink-500/50">
@@ -445,17 +443,17 @@
                         </h2>
                         <div>
                             <label for="fantasy" class="block mb-2 text-sm font-medium">4. Your Wildest Fantasy 🌠</label>
-                            <textarea id="fantasy" rows="2" placeholder="Keep it fun! E.g., Becoming a food critic, traveling to space..." class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300"></textarea>
+                            <textarea id="fantasy" name="fantasy" rows="2" placeholder="Keep it fun! E.g., Becoming a food critic, traveling to space..." class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300"></textarea>
                             <span class="error-message" id="fantasy-error"></span>
                         </div>
                         <div>
                             <label for="guilty-pleasure" class="block mb-2 text-sm font-medium">5. Tell us your Guilty Pleasure 🤫</label>
-                            <input type="text" id="guilty-pleasure" placeholder="E.g., Reality TV, Singing badly in the shower" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300"/>
+                            <input type="text" id="guilty-pleasure" name="guilty-pleasure" placeholder="E.g., Reality TV, Singing badly in the shower" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300"/>
                             <span class="error-message" id="guilty-pleasure-error"></span>
                         </div>
                         <div>
                             <label for="senior-date" class="block mb-2 text-sm font-medium">6. If you had to take one senior on a date, who would it be and why? ❤️‍🔥</label>
-                            <textarea id="senior-date" rows="2" placeholder="Be specific! Name and a funny reason, please." class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300"></textarea>
+                            <textarea id="senior-date" name="senior-date" rows="2" placeholder="Be specific! Name and a funny reason, please." class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300"></textarea>
                             <span class="error-message" id="senior-date-error"></span>
                         </div>
                         <div class="flex justify-between gap-5 mt-8">
@@ -478,7 +476,7 @@
                                 WARNING: We will reveal this secret on stage if you refuse to
                                 perform any task!( VALID Secret )
                             </p>
-                            <textarea id="secret" rows="2" placeholder="Type your biggest secret here..." class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300" required></textarea>
+                            <textarea id="secret" name="secret" rows="2" placeholder="Type your biggest secret here..." class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 input-glow transition duration-300" required></textarea>
                             <span class="error-message" id="secret-error"></span>
                         </div>
                         
@@ -558,22 +556,31 @@
         </div>
     </div>
 
-
     <script>
         // --- Audio Setup ---
         const audio = document.getElementById('background-audio');
         
         // Set audio properties
-        audio.volume = 0.5; // Set volume to 50%
-        audio.loop = true; // Loop the audio
+        audio.volume = 0.5;
+        audio.loop = true;
         
-        // Function to play audio
+        // Function to play audio with user interaction
         function playAudio() {
-            audio.play().then(() => {
-                console.log("Audio started playing");
-            }).catch(error => {
-                console.log("Audio play failed:", error);
-            });
+            // Create a promise to handle audio play
+            const playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log("Audio started playing");
+                }).catch(error => {
+                    console.log("Audio play failed, trying again with user interaction:", error);
+                    // If autoplay fails, play on next user interaction
+                    document.addEventListener('click', function playOnClick() {
+                        audio.play();
+                        document.removeEventListener('click', playOnClick);
+                    });
+                });
+            }
         }
 
         // --- Shared Elements ---
@@ -587,55 +594,53 @@
         // --- PAGE 1: INTRO ANIMATION (AVYON) ---
         const typingDuration = 2.5; 
         
-        // Initial GSAP setup: Start the text small, rotated, and far away (opacity 0)
-        // Set the text wrapper to an off-screen starting point for the zoom-in
+        // Initial GSAP setup
         gsap.set(textWrapperP1, { scale: 0.1, rotation: -30, opacity: 0 });
 
         const masterTimeline = gsap.timeline({
-            // Increased duration for the entire sequence to make the entrance dramatic
             duration: 3.5, 
             defaults: { ease: "power2.inOut" },
             onComplete: showCyberPartyPage 
         });
 
-        // 1. **DRAMATIC ZOOM-IN ENTRANCE** (Start: scale 0.1, rotation -30deg; End: scale 1, rotation 0deg)
+        // 1. DRAMATIC ZOOM-IN ENTRANCE
         masterTimeline.to(textWrapperP1, { 
             opacity: 1, 
-            scale: 1, // Zoom in to normal size
-            rotation: 0, // Rotate to straight position
+            scale: 1,
+            rotation: 0,
             duration: 1.5, 
-            ease: "power3.out" // Use a strong "out" ease for a fast stop
-        }, 0); // Start immediately at time 0
+            ease: "power3.out"
+        }, 0);
 
-        // 2. **SUBTLE GLOW/SHIMMER EFFECT** (while waiting)
+        // 2. SUBTLE GLOW/SHIMMER EFFECT
         masterTimeline.to(avyonTextSpan, {
             scale: 1.05,
             duration: 1.0,
             ease: "power1.inOut",
             yoyo: true, 
             repeat: 1, 
-        }, ">-0.5"); // Starts at the end of the entrance, lasts 2.0s total
+        }, ">-0.5");
 
-        // 3. **EXIT ANIMATION** (Zoom-out and rotate to Page 2)
+        // 3. EXIT ANIMATION
         masterTimeline.to(textWrapperP1, { 
             opacity: 0, 
             scale: 20, 
-            rotation: 15, // Smooth zoom-out and rotation for the exit
+            rotation: 15,
             duration: 1, 
             ease: "expo.in"
-        }, ">-0.5"); // Overlap slightly
+        }, ">-0.5");
 
         // 4. Cleanup
         masterTimeline.set(page1Content, { 
             display: 'none',
         }, ">-0.2"); 
 
-
         // --- PAGE 2: CYBER-PARTY SCREEN SETUP ---
         function showCyberPartyPage() {
             page2Content.classList.add('cyber-party-page');
             page2Content.classList.remove('hidden-content');
 
+            // Animate floating emojis
             document.querySelectorAll('.floating-emoji-p2').forEach((el) => {
                 const duration = 10 + Math.random() * 8; 
                 const delay = Math.random() * 5; 
@@ -645,10 +650,15 @@
 
             const confettiCanvas = document.getElementById('confetti-canvas');
             const confettiSettings = {
-                target: confettiCanvas, max: 300, size: 1.5, animate: true,
+                target: confettiCanvas, 
+                max: 300, 
+                size: 1.5, 
+                animate: true,
                 props: ['circle', 'square', 'triangle', 'line'],
                 colors: ['var(--neon-pink)', 'var(--neon-blue)', 'var(--neon-purple)', 'var(--neon-green)', 'var(--neon-yellow)'],
-                clock: 25, start_from_pointer: false, respawn: false
+                clock: 25, 
+                start_from_pointer: false, 
+                respawn: false
             };
             const confetti = new ConfettiGenerator(confettiSettings);
 
@@ -658,15 +668,19 @@
                 
                 confetti.render();
                 gsap.to('#go-button', {
-                    scale: 1.1, duration: 0.2, yoyo: true, repeat: 1,
+                    scale: 1.1, 
+                    duration: 0.2, 
+                    yoyo: true, 
+                    repeat: 1,
                     boxShadow: '0 0 10px var(--neon-pink), 0 0 30px var(--neon-blue)',
-                    onComplete: () => { setTimeout(() => { confetti.clear(); }, 3000); }
+                    onComplete: () => { 
+                        setTimeout(() => { confetti.clear(); }, 3000); 
+                    }
                 });
 
                 const transitionTimeline = gsap.timeline({
                     onStart: () => {
                         page3Content.classList.remove('hidden-content');
-                        // Ensure body doesn't scroll while animating
                         body.classList.add('overflow-hidden'); 
                     },
                     onComplete: switchToFormPage 
@@ -687,32 +701,25 @@
                 
                 transitionTimeline.to(body, { 
                     onStart: () => {
-                        // Clear the initial background animation before applying the new one
                         body.style.animation = 'none'; 
                     }
                 }, 0.2); 
             });
         }
 
-        // --- PAGE 3: FORM SCREEN TRANSITION (FINAL CENTERING) ---
+        // --- PAGE 3: FORM SCREEN TRANSITION ---
         function switchToFormPage() {
-            // 1. Hide the old page
             page2Content.classList.add('hidden-content');
-            
-            // 2. Apply form background styles (which includes the grid centering and overflow-y: auto)
             body.classList.remove('cyber-party-page', 'overflow-hidden');
             body.classList.add('form-page-body');
             
-            // 3. FIX: Reliably remove all GSAP positioning and classes to allow the CSS Grid on the body to take over.
             gsap.set(page3Content, { clearProps: "all" });
-            // Re-apply the necessary classes
             page3Content.classList.add('w-full', 'relative', 'p-4'); 
 
-            // 4. Initialize form animations and logic
             initializeFormPage();
         }
 
-        // --- PAGE 3: FORM SCRIPT LOGIC (Multi-Step Form) ---
+        // --- PAGE 3: FORM SCRIPT LOGIC ---
         function initializeFormPage() {
             const formContainer = document.getElementById("form-container");
             const progressBar = document.getElementById("progress-bar");
@@ -721,14 +728,20 @@
             let currentStep = 1;
             let excitementRating = 0;
 
-            // Entrance Animation (Form Content) 
+            // Entrance Animation
             gsap.fromTo(formContainer, { opacity: 0, scale: 0.98 }, { duration: 0.5, opacity: 1, scale: 1, ease: "power2.out", delay: 0.2 });
 
-            // Floating Emojis Animation (Form) - Only for elements that are NOT display:none
+            // Floating Emojis Animation
             document.querySelectorAll(".floating-emoji-form").forEach((el, i) => {
                 if(getComputedStyle(el).display !== 'none') {
                     gsap.to(el, {
-                        y: "-=100", opacity: 0, duration: gsap.utils.random(8, 15), ease: "none", repeat: -1, yoyo: true, delay: i * 0.5,
+                        y: "-=100", 
+                        opacity: 0, 
+                        duration: gsap.utils.random(8, 15), 
+                        ease: "none", 
+                        repeat: -1, 
+                        yoyo: true, 
+                        delay: i * 0.5,
                     });
                 }
             });
@@ -736,18 +749,12 @@
             // Excitement Rating Selection
             document.querySelectorAll('.rating-bar').forEach(bar => {
                 bar.addEventListener('click', function() {
-                    // Remove active class from all bars
                     document.querySelectorAll('.rating-bar').forEach(b => {
                         b.classList.remove('active');
                     });
                     
-                    // Add active class to clicked bar
                     this.classList.add('active');
-                    
-                    // Set the excitement rating value
                     excitementRating = parseInt(this.getAttribute('data-rating'));
-                    
-                    // Clear any error message
                     document.getElementById('excitement-error').textContent = '';
                 });
             });
@@ -763,13 +770,8 @@
                     nameInput.classList.add('input-error');
                     nameInput.classList.remove('input-success');
                     return false;
-                } else if (nameValue.length < 5) {
+                } else if (nameValue.length < 2) {
                     nameError.textContent = 'Name must be at least 2 characters long';
-                    nameInput.classList.add('input-error');
-                    nameInput.classList.remove('input-success');
-                    return false;
-                } else if (!/^[a-zA-Z\s]+$/.test(nameValue)) {
-                    nameError.textContent = 'Name can only contain letters and spaces';
                     nameInput.classList.add('input-error');
                     nameInput.classList.remove('input-success');
                     return false;
@@ -850,10 +852,8 @@
                 }
             }
 
-            // Removed validation for guilty pleasure
             function validateGuiltyPleasure() {
-                // No validation needed for guilty pleasure
-                return true;
+                return true; // No validation needed
             }
 
             function validateSeniorDate() {
@@ -927,7 +927,7 @@
                 }
             }
 
-            // Functions must be globally accessible for `onclick`
+            // Global functions for form navigation
             window.updateProgress = function() {
                 const progress = (currentStep / formSteps.length) * 100;
                 progressBar.style.width = `${progress}%`;
@@ -936,7 +936,6 @@
             window.validateCurrentStep = function() {
                 let isValid = true;
                 
-                // Validate fields based on current step
                 if (currentStep === 1) {
                     isValid = validateName() && validateRollNo() && validateHobby();
                 } else if (currentStep === 2) {
@@ -950,7 +949,6 @@
 
             window.nextStep = function(step) {
                 if (!validateCurrentStep()) {
-                    // Shake animation for invalid form
                     gsap.to(formSteps[currentStep - 1], {
                         x: 10,
                         duration: 0.1,
@@ -964,7 +962,9 @@
                 }
                 
                 gsap.to(formSteps[currentStep - 1], {
-                    opacity: 0, x: -50, duration: 0.5,
+                    opacity: 0, 
+                    x: -50, 
+                    duration: 0.5,
                     onComplete: () => {
                         formSteps[currentStep - 1].classList.add("hidden");
                         currentStep = step;
@@ -977,7 +977,9 @@
 
             window.prevStep = function(step) {
                 gsap.to(formSteps[currentStep - 1], {
-                    opacity: 0, x: 50, duration: 0.5,
+                    opacity: 0, 
+                    x: 50, 
+                    duration: 0.5,
                     onComplete: () => {
                         formSteps[currentStep - 1].classList.add("hidden");
                         currentStep = step;
@@ -988,7 +990,7 @@
                 });
             }
 
-            // Add real-time validation
+            // Real-time validation
             document.getElementById('name').addEventListener('input', validateName);
             document.getElementById('rollno').addEventListener('input', validateRollNo);
             document.getElementById('hobby').addEventListener('input', validateHobby);
@@ -996,80 +998,96 @@
             document.getElementById('senior-date').addEventListener('input', validateSeniorDate);
             document.getElementById('secret').addEventListener('input', validateSecret);
             
-            // Add validation for title checkboxes
             const titleCheckboxes = document.querySelectorAll('input[name="title"]');
             titleCheckboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', validateTitle);
             });
 
             // --- Form Submission Handler ---
-            document
-                .getElementById("freshers-form")
-                .addEventListener("submit", function (e) {
-                    e.preventDefault();
+            document.getElementById("freshers-form").addEventListener("submit", function (e) {
+                e.preventDefault();
 
-                    if (!validateCurrentStep()) {
-                        // Shake animation for invalid form
-                        gsap.to(formSteps[currentStep - 1], {
-                            x: 10,
-                            duration: 0.1,
-                            repeat: 5,
-                            yoyo: true,
-                            onComplete: () => {
-                                gsap.set(formSteps[currentStep - 1], { x: 0 });
-                            }
-                        });
-                        alert("Please fill in all required fields correctly before submitting.");
-                        return;
-                    }
-
-                    // Show loading state
-                    const originalText = submitBtn.innerHTML;
-                    submitBtn.innerHTML = '<span class="loading-spinner"></span> Submitting...';
-                    submitBtn.disabled = true;
-
-                    // Collect form data
-                    const formData = new FormData(e.target);
-                    const data = Object.fromEntries(formData.entries());
-                    const titles = Array.from(e.target.querySelectorAll('input[name="title"]:checked')).map(cb => cb.value);
-                    data.titles = titles;
-                    data.excitementRating = excitementRating;
-                    data.timestamp = new Date().toISOString();
-
-                    // Send data to Flask backend
-                    fetch('/submit', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(data)
-                    })
-                    .then(response => response.json())
-                    .then(result => {
-                        if (result.status === 'success') {
-                            // Show success message
-                            gsap.to(formSteps[currentStep - 1], {
-                                opacity: 0, duration: 0.5,
-                                onComplete: () => {
-                                    formSteps[currentStep - 1].classList.add("hidden");
-                                    const successMessage = document.getElementById("success-message");
-                                    successMessage.classList.remove("hidden");
-                                    gsap.fromTo(successMessage, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" });
-                                },
-                            });
-                            console.log("Form Data Submitted:", data);
-                        } else {
-                            throw new Error(result.message);
+                if (!validateCurrentStep()) {
+                    gsap.to(formSteps[currentStep - 1], {
+                        x: 10,
+                        duration: 0.1,
+                        repeat: 5,
+                        yoyo: true,
+                        onComplete: () => {
+                            gsap.set(formSteps[currentStep - 1], { x: 0 });
                         }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('There was an error submitting your form. Please try again.');
-                        // Reset button state
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
                     });
+                    alert("Please fill in all required fields correctly before submitting.");
+                    return;
+                }
+
+                // Show loading state
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span class="loading-spinner"></span> Submitting...';
+                submitBtn.disabled = true;
+
+                // Collect form data
+                const formData = new FormData(e.target);
+                const data = Object.fromEntries(formData.entries());
+                const titles = Array.from(e.target.querySelectorAll('input[name="title"]:checked')).map(cb => cb.value);
+                
+                // Prepare data for submission
+                const submissionData = {
+                    name: data.name || '',
+                    rollno: data.rollno || '',
+                    hobby: data.hobby || '',
+                    fantasy: data.fantasy || '',
+                    'guilty-pleasure': data['guilty-pleasure'] || '',
+                    'senior-date': data['senior-date'] || '',
+                    secret: data.secret || '',
+                    excitementRating: excitementRating,
+                    titles: titles,
+                    timestamp: new Date().toISOString()
+                };
+
+                console.log("Submitting data:", submissionData);
+
+                // Send data to Flask backend
+                fetch('/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(submissionData)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(result => {
+                    if (result.status === 'success') {
+                        // Show success message
+                        gsap.to(formSteps[currentStep - 1], {
+                            opacity: 0, 
+                            duration: 0.5,
+                            onComplete: () => {
+                                formSteps[currentStep - 1].classList.add("hidden");
+                                const successMessage = document.getElementById("success-message");
+                                successMessage.classList.remove("hidden");
+                                gsap.fromTo(successMessage, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" });
+                            },
+                        });
+                        console.log("Form submitted successfully:", result.message);
+                    } else {
+                        throw new Error(result.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error submitting your form. Please try again. Error: ' + error.message);
+                    // Reset button state
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
                 });
+            });
+
             updateProgress();
         }
     </script>
